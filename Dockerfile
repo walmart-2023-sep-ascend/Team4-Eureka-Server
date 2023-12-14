@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17
-COPY target/eureka.jar app.jar
-
-ENTRYPOINT [ "java", "-jar", "app.jar"]
+FROM openjdk:17
+EXPOSE 9300
+COPY target/eureka.jar eureka-app.jar
+ENTRYPOINT [ "java", "-jar", "eureka-app.jar"]
